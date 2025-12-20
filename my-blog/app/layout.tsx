@@ -1,6 +1,9 @@
 import React from "react";
 import "./globals.css";
 import Link from "next/link";
+import { ThemeProvider } from "./providers";
+import { ThemeToggle } from "@/components/ThemeToggle";
+
 
 export const metadata = {
   title: "My Blog",
@@ -22,11 +25,12 @@ export default function RootLayout({
             </Link>
             <Link href="/blog">Blog</Link>
             <Link href="/category">Category</Link>
+            <div className="fixed top-4 right-4 z-50">    <ThemeToggle /></div>
           </nav>
         </header>
 
         <main className="mx-auto max-w-3xl p-6">
-          {children}
+          <ThemeProvider> {children}</ThemeProvider>
         </main>
       </body>
     </html>

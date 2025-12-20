@@ -1,4 +1,4 @@
-import { getAllCategories, getAllPosts, getCategoryStats } from "@/lib/posts";
+import { getCategoryStats } from "@/lib/posts";
 import Link from "next/link";
 
 export default function CategoryIndexPage() {
