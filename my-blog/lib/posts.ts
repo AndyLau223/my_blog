@@ -65,8 +65,23 @@ export function getAllCategories(): string[] {
   return Array.from(new Set(posts.map((p) => p.category)));
 }
 
-export function getPostByCategory(category: string): Post[] {
+export function getPostsByCategory(category: string): Post[] {
   return getAllPosts().filter(
     (post) => post.category == category
   );
+}
+
+export function getCategoryStats(): {
+  name: string;
+  count: number;
+}[] {
+  const posts = getAllPosts();
+  const map = new Map<string, number>();
+
+  for (const post of posts){
+      map.set(post.category, (map.get(post.category) || 0) + 1);
+  }
+
+
+  return Array.from(map.entries()).map(([name, count]) => ({ name, count }));
 }

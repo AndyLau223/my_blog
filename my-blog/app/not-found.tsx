@@ -10,7 +10,7 @@ export default function NotFound() {
           The page you are looking for does not exist.
         </p>
         <Link href="/blog" className="underline">
-          ← Back to Blog
+          ← Back to Blog 
         </Link>
       </div>
     );
